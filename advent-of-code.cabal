@@ -26,6 +26,7 @@ library
     , directory
     , parsec
     , pretty
+    , split
     , tasty
     , tasty-hunit
     , tasty-quickcheck
@@ -48,6 +49,7 @@ executable advent-of-code
     , directory
     , parsec
     , pretty
+    , split
     , tasty
     , tasty-hunit
     , tasty-quickcheck
@@ -71,6 +73,7 @@ test-suite aoc
     , directory
     , parsec
     , pretty
+    , split
     , tasty
     , tasty-hunit
     , tasty-quickcheck

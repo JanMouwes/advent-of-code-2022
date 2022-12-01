@@ -1,5 +1,8 @@
 module Day_1.Name where
 
+import Data.List.Split
+import Data.List
+
 inputFile :: String
 inputFile = "src/Day_1/input.txt"
 
@@ -15,11 +18,13 @@ run = do
   print $ part2 inputStr
 
 
-part1 :: String -> String
-part1 = undefined . parse
+part1 :: String -> Int
+part1 = maximum . map sum . parse
 
-part2 :: String -> String
-part2 = undefined . parse
+part2 :: String -> Int
+part2 = sum . take 3 . reverse . sort . map sum . parse
 
-parse :: String -> String
-parse = undefined
+parse :: String -> [[Int]]
+parse raw = 
+  let byElf = splitOn "\n\n" raw
+  in map (map read . lines) byElf

@@ -25,4 +25,5 @@ dependencies:
 - QuickCheck
 - tasty-quickcheck
 - parsec
+- split
 
