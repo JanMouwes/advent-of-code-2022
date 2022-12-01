@@ -1,0 +1,35 @@
+# Borrowed from https://github.com/actions/setup-haskell/blob/main/README.md 
+
+on: 
+  push:
+    branches:
+    - main
+  pull_request:
+    branches:
+    - main
+name: build
+env:
+  GHC_VERSION: '9.4.2' # Exact version of ghc to use
+jobs:
+  test:
+    name: Run test suite
+    runs-on: ubuntu-latest 
+    steps:
+      - uses: actions/checkout@v2
+      - uses: haskell/actions/setup@v2
+        with:
+          ghc-version: ${{ env.GHC_VERSION }} 
+          enable-stack: true
+          stack-version: 'latest'
+      - run: stack test
+  run:
+    name: Run Main.hs
+    runs-on: ubuntu-latest 
+    steps:
+      - uses: actions/checkout@v2
+      - uses: haskell/actions/setup@v2
+        with:
+          ghc-version: ${{ env.GHC_VERSION }} 
+          enable-stack: true
+          stack-version: 'latest'
+      - run: stack run 
