@@ -22,14 +22,3 @@ jobs:
           enable-stack: true
           stack-version: 'latest'
       - run: stack test
-  run:
-    name: Run Main.hs
-    runs-on: ubuntu-latest 
-    steps:
-      - uses: actions/checkout@v2
-      - uses: haskell/actions/setup@v2
-        with:
-          ghc-version: ${{ env.GHC_VERSION }} 
-          enable-stack: true
-          stack-version: 'latest'
-      - run: stack run 
