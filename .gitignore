@@ -1,0 +1,5 @@
+/.idea/*
+/dist-newstyle/*
+/.stack-work/*
+
+**/.DS_Store

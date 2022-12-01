@@ -1,0 +1,77 @@
+cabal-version: 1.12
+
+-- This file has been generated from package.yaml by hpack version 0.35.0.
+--
+-- see: https://github.com/sol/hpack
+
+name:           advent-of-code
+version:        0.0.0
+build-type:     Simple
+
+library
+  exposed-modules:
+      Day_1.Name
+      Day_template.Name
+      Main
+      Utils.List
+  other-modules:
+      Paths_advent_of_code
+  hs-source-dirs:
+      src
+  build-depends:
+      QuickCheck
+    , array
+    , base
+    , containers
+    , directory
+    , parsec
+    , pretty
+    , tasty
+    , tasty-hunit
+    , tasty-quickcheck
+  default-language: Haskell2010
+
+executable advent-of-code
+  main-is: Main.hs
+  other-modules:
+      Day_1.Name
+      Day_template.Name
+      Utils.List
+      Paths_advent_of_code
+  hs-source-dirs:
+      src
+  build-depends:
+      QuickCheck
+    , array
+    , base
+    , containers
+    , directory
+    , parsec
+    , pretty
+    , tasty
+    , tasty-hunit
+    , tasty-quickcheck
+  default-language: Haskell2010
+
+test-suite aoc
+  type: exitcode-stdio-1.0
+  main-is: Spec/Main.hs
+  other-modules:
+      Spec.Day_1.Day_1Spec
+      Spec.Lib
+      Paths_advent_of_code
+  hs-source-dirs:
+      test
+  build-depends:
+      QuickCheck
+    , advent-of-code
+    , array
+    , base
+    , containers
+    , directory
+    , parsec
+    , pretty
+    , tasty
+    , tasty-hunit
+    , tasty-quickcheck
+  default-language: Haskell2010

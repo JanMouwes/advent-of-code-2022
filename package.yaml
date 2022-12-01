@@ -1,0 +1,28 @@
+name: advent-of-code
+
+library:
+  source-dirs: src
+
+executable:
+  main: Main.hs
+  source-dirs: src
+
+tests:
+  aoc:
+    main: Spec/Main.hs
+    source-dirs: test
+    dependencies:
+    - advent-of-code
+
+dependencies:
+- directory
+- base
+- array
+- containers
+- pretty
+- tasty
+- tasty-hunit
+- QuickCheck
+- tasty-quickcheck
+- parsec
+
