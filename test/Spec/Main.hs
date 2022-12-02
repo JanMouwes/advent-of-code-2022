@@ -1,4 +1,5 @@
-import qualified Spec.Day_1.Day_1Spec as Day_1
+import qualified Spec.Day_1.Spec as Day_1
+import qualified Spec.Day_2.Spec as Day_2
 
 import Test.Tasty (defaultMain, testGroup, TestTree)
 import Spec.Lib (toSimpleIOTest)
@@ -8,6 +9,7 @@ main = do
   defaultMain $ testGroup "Tests" [
         sanityCheck
       , Day_1.tests
+      , Day_2.tests
     ]
 
 sanityCheck :: TestTree

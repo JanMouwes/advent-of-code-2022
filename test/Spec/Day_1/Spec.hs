@@ -1,4 +1,4 @@
-module Spec.Day_1.Day_1Spec where
+module Spec.Day_1.Spec where
 
 import Day_1.Name (part1, part2)
 import Test.Tasty (TestTree, testGroup)

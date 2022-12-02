@@ -11,6 +11,7 @@ build-type:     Simple
 library
   exposed-modules:
       Day_1.Name
+      Day_2.Name
       Day_template.Name
       Main
       Utils.List
@@ -36,6 +37,7 @@ executable advent-of-code
   main-is: Main.hs
   other-modules:
       Day_1.Name
+      Day_2.Name
       Day_template.Name
       Utils.List
       Paths_advent_of_code
@@ -59,7 +61,8 @@ test-suite aoc
   type: exitcode-stdio-1.0
   main-is: Spec/Main.hs
   other-modules:
-      Spec.Day_1.Day_1Spec
+      Spec.Day_1.Spec
+      Spec.Day_2.Spec
       Spec.Lib
       Paths_advent_of_code
   hs-source-dirs:
