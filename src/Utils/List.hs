@@ -1,5 +1,7 @@
 module Utils.List where
 
+import qualified Data.Set as Set
+
 -- | If the given list is prefixed by the given prefix, it will return the remainder. 
 --   Otherwise, it will return Nothing
 consumePrefix :: Eq a => [a] -> [a] -> Maybe [a]
@@ -39,3 +41,6 @@ compareBy f x y = f x `compare` f y
 
 without :: Ord a => [a] -> [a] -> [a]
 without xs ys = filter (`notElem` ys) xs
+
+uniques :: Ord a => [a] -> [a]
+uniques = Set.toList . Set.fromList
