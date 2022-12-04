@@ -13,6 +13,7 @@ library
       Day_1.Name
       Day_2.Name
       Day_3.Name
+      Day_4.Name
       Day_template.Name
       Main
       Utils.List
@@ -41,6 +42,7 @@ executable advent-of-code
       Day_1.Name
       Day_2.Name
       Day_3.Name
+      Day_4.Name
       Day_template.Name
       Utils.List
       Utils.String
@@ -68,6 +70,7 @@ test-suite aoc
       Spec.Day_1.Spec
       Spec.Day_2.Spec
       Spec.Day_3.Spec
+      Spec.Day_4.Spec
       Spec.Lib
       Paths_advent_of_code
   hs-source-dirs:

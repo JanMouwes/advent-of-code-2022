@@ -30,11 +30,10 @@ splitOnFirst [] _ = ([], [])
 splitOnFirst xs x = (takeWhile (/=x) xs, drop 1 $ dropWhile (/=x) xs)
 
 splitOnElement :: Eq a => [a] -> a -> [[a]]
-splitOnElement xs x = foldr f [[]] xs
-    where
-        f el (r:rs) 
-            | el == x = []:r:rs
-            | otherwise = (el:r):rs
+splitOnElement [] _ = [[]]
+splitOnElement xs x = 
+  let (with, out) = span (/= x) xs
+  in (with : splitOnElement (tail out) x)
 
 compareBy :: Ord b => (a -> b) -> a -> a -> Ordering
 compareBy f x y = f x `compare` f y
