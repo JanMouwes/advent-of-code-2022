@@ -1,6 +1,9 @@
 module Utils.List where
 
 import qualified Data.Set as Set
+import qualified Data.Sequence as Seq
+import Data.Foldable (toList)
+import Data.Sequence ((|>))
 
 -- | If the given list is prefixed by the given prefix, it will return the remainder. 
 --   Otherwise, it will return Nothing
@@ -43,3 +46,18 @@ without xs ys = filter (`notElem` ys) xs
 
 uniques :: Ord a => [a] -> [a]
 uniques = Set.toList . Set.fromList
+
+
+
+-- https://stackoverflow.com/a/27727244
+windows :: Int -> [a] -> [[a]]
+windows n0 = go 0 Seq.empty
+  where
+    go n s (a:as) | n' <  n0   =              go n' s'  as
+                  | n' == n0   = toList s'  : go n' s'  as
+                  | otherwise =  toList s'' : go n  s'' as
+      where
+        n'  = n + 1         -- O(1)
+        s'  = s |> a        -- O(1)
+        s'' = Seq.drop 1 s' -- O(1)
+    go _ _ [] = []
