@@ -1,6 +1,6 @@
 module Day_4.Name (run, part1, part2) where
 import Utils.String (nonEmptyLines)
-import Utils.List (splitOnElement, splitOnFirst)
+import Utils.List (splitOnFirst)
 import Data.Bifunctor (bimap)
 
 inputFile :: String
@@ -31,11 +31,8 @@ parse = map (bimap parsePair parsePair . (`splitOnFirst` ',')) . nonEmptyLines
   where parsePair = bimap read read . (`splitOnFirst` '-')
 
 contains :: Section -> Section -> Bool
-contains left@(leftA, leftZ) right@(rightA, rightZ) = leftA <= rightA && leftZ >= rightZ
+contains (leftA, leftZ) (rightA, rightZ) = leftA <= rightA && leftZ >= rightZ
 
 hasOverlap :: Section -> Section -> Bool
-hasOverlap left@(leftA, leftZ) right@(rightA, rightZ) = 
+hasOverlap (leftA, leftZ) (rightA, rightZ) = 
   leftZ >= rightA && leftZ <= rightZ || leftA >= rightA && leftA <= rightZ
-
-sectionDigits :: Section -> [Int]
-sectionDigits (start, end) = [start..end]
